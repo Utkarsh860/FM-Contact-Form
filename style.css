@@ -1,0 +1,27 @@
+
+      @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+      :root {
+        --white: hsl(0, 0%, 100%);
+        --grey-light: hsl(186, 15%, 59%);
+        --grey-dark: hsl(187, 24%, 22%);
+
+        --green-light: hsl(148, 38%, 91%);
+        --green-dark: hsl(169, 82%, 27%);
+        --red: hsl(0, 66%, 54%);
+
+        /* labels */
+        --size: 16px;
+
+        /* ### Font */
+        --font: "Karla", sans-serif;
+        --light: 400;
+        --bold: 700;
+      }
+
+      body {
+        font-family: var(--font);
+      }
+      .query,#contact {
+  accent-color: hsl(169, 82%, 27%); /
+}
+

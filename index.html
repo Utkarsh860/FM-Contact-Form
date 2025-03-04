@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    
+  </head>
+  <body
+    class="h-full sm:h-screen flex justify-center items-center bg-[var(--green-light)] my-10"
+  >
+  
+    <form
+      class="form w-9/10 sm:w-3/4 md:w-2/3 lg:w-1/3 bg-[var(--white)] py-8 px-6 rounded-lg"
+    >
+      <div class="head text-3xl text-[var(--grey-dark)] font-bold">
+        Contact Form
+      </div>
+      <div class="flex flex-col sm:flex-row justify-between mt-4 gap-4">
+        <!-- first-name -->
+        <div class="w-full">
+          <label for="first-name" class="block text-sm text-[var(--grey-light)]"
+            >First Name <sup class="text-[var(--green-dark)]">*</sup>
+          </label>
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            autocomplete="on"
+            class="border-1 border-[var(--grey-light)] w-full p-2 rounded-lg mt-2 focus:outline-none focus:border-[var(--green-dark)] focus:border-2 cursor-pointer"
+          />
+          <span class="text-[var(--red)] text-sm mt-2 hidden" id="firstError"
+            >This field is required</span
+          >
+        </div>
+        <!-- last-name  -->
+        <div class="w-full">
+          <label for="last-name" class="block text-sm text-[var(--grey-light)]"
+            >Last Name <sup class="text-[var(--green-dark)]">*</sup>
+          </label>
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            autocomplete="on"
+            class="border-1 border-[var(--grey-light)] w-full p-2 rounded-lg mt-2 focus:outline-none focus:border-[var(--green-dark)] focus:border-2 cursor-pointer"
+          />
+          <span class="text-[var(--red)] text-sm mt-2 hidden" id="lastError"
+            >This field is required</span
+          >
+        </div>
+      </div>
+
+      <!-- Email Address  -->
+      <div class="mt-4">
+        <label for="email" class="block text-sm text-[var(--grey-light)]"
+          >Email Address <sup class="text-[var(--green-dark)]">*</sup>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="on"
+          class="border-1 border-[var(--grey-light)] w-full p-2 rounded-lg mt-2 focus:outline-none focus:border-[var(--green-dark)] focus:border-2 cursor-pointer"
+        />
+        <span class="text-[var(--red)] text-sm mt-2 hidden" id="emailError"
+          >Please enter a valid email address</span
+        >
+      </div>
+
+      <!-- Query-type  -->
+      <div class="mt-4">
+        <label for="quert-type" class="block text-sm text-[var(--grey-light)]"
+          >Query Type <sup class="text-[var(--green-dark)]">*</sup>
+        </label>
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+          <div
+            class="border-1 border-[var(--grey-light)] w-full p-2 rounded-lg mt-2 flex gap-2 flex items-center cursor-pointer"
+          >
+           
+            <input type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 cursor-pointer query">
+            <span class="text-[var(--grey-light)]">General Enquiry</span>
+          </div>
+
+          <div
+            class="border-1 border-[var(--grey-light)] w-full p-2 rounded-lg mt-2 flex gap-2 flex items-center cursor-pointer"
+          >
+           
+              <input type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 cursor-pointer query">
+              <span class="text-[var(--grey-light)]">Support Request</span>
+            </div>
+            
+          </div>
+        </div>
+        <span class="text-[var(--red)] text-sm mt-2 hidden" id="queryError"
+          >Please select a Query type</span
+        >
+      </div>
+      <!-- Message  -->
+      <div class="mt-4">
+        <label for="quert-type" class="block text-sm text-[var(--grey-light)]"
+          >Message <sup class="text-[var(--green-dark)]">*</sup>
+        </label>
+        <textarea
+          name="message"
+          id="message"
+          class="border-1 border-[var(--grey-light)] w-full h-36 rounded-lg mt-2 focus:outline-none focus:border-[var(--green-dark)] focus:border-2 resize-none py-2"
+        >
+        </textarea>
+        <span class="text-[var(--red)] text-sm mt-2 hidden" id="messageError"
+          >This field is required</span
+        >
+      </div>
+
+      <!-- terms -->
+      <div class="my-10">
+        <div class="flex items-center gap-2">
+          
+          <input id="contact" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm ">
+         
+            <p class="text-sm text-[var(--grey-dark)]">
+            I consent to being contacted by the Team
+            <sup class="text-[var(--green-dark)]">*</sup>
+          </p>
+          </div>
+<span class="text-[var(--red)] text-sm mt-2 hidden" id="termsError"
+          >To submit this form, please consent to being contacted</span
+        >
+          
+        </div>
+        
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-[var(--green-dark)] text-[var(--white)] text-center p-2 text-semibold rounded-lg cursor-pointer"
+      >
+        Submit
+      </button>
+    </form>
+    <!-- <div class="fixed top-2 mx-auto bg-[var(--grey-dark)] text-[var(--white)] px-4 py-6 rounded-lg shadow-lg">
+      
+    </div> -->
+    
+  </body>
+  <script src="main.js"></script>
+  
+</html>
